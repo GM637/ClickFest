@@ -49,7 +49,11 @@ const App = () => {
         });
   
         if (comboTimer) clearTimeout(comboTimer);
-        setComboTimer(setTimeout(() => setCombo(0), COMBO_TIMEOUT));
+        setComboTimer(setTimeout(() => {
+          setCombo(0);
+          resetMultiplier();
+          resetComboRequirement();
+        }, COMBO_TIMEOUT));
   
         if (whackedTimeout) clearTimeout(whackedTimeout);
         setWhackedTimeout(
@@ -61,6 +65,8 @@ const App = () => {
             });
           }, WHACKED_DURATION)
         );
+
+        setPopupMessage('');
   
         const pointsEarned = comboMultiplier > 1 ? `+${comboMultiplier} points` : '+1 point';
         setPopupMessage(pointsEarned);
@@ -69,7 +75,7 @@ const App = () => {
         setPopupTimeout(
           setTimeout(() => {
             setPopupMessage('');
-          }, 1000)
+          }, 500)
         );
       }
     } else {
@@ -79,7 +85,7 @@ const App = () => {
       resetComboRequirement();
   
       // Clear the existing popup message, if any
-      setPopupMessage('');
+      setPopupMessage('MISSED');
     }
   };
   

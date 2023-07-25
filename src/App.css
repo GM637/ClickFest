@@ -77,7 +77,8 @@ body {
   border-radius: 5px;
   pointer-events: none;
   opacity: 0;
-  transition: transform 0.3s, opacity 0.3s;
+  transform: translateY(0);
+  transition: transform 0.2s, opacity 0.2s;
 }
 
 .show-popup {
