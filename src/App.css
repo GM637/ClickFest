@@ -34,8 +34,23 @@ body {
   transition: background-color 0.3s;
 }
 
-.mole {
+.mole-1 {
   background-color: #333;
+  color: #fff;
+}
+
+.mole-2 {
+  background-color: #6dbb1a;
+  color: #fff;
+}
+
+.mole-3 {
+  background-color: #7d2ac2;
+  color: #fff;
+}
+
+.mole-4 {
+  background-color: #1a8abd;
   color: #fff;
 }
 
